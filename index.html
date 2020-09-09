@@ -20,6 +20,13 @@
     <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <link rel="icon" type="image/png" href="android-chrome-192x192.png" sizes="192x192">
     <link rel="icon" type="image/png" href="android-chrome-256x256.png" sizes="256x256">
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<!-- default（Safariと同じ） / black（黒） / black-translucent（ステータスバーをコンテンツに含める） -->
+		<meta name="apple-mobile-web-app-status-bar-style" content="black">
+		<!-- ホーム画面に表示されるアプリ名 -->
+		<meta name="apple-mobile-web-app-title" content="NU-Maps">
+		<!-- ホーム画面に表示されるアプリアイコン -->
+		<link rel="apple-touch-icon" href="images/img.png">
     <link rel="manifest" crossorigin="use-credentials"  href="manifest.json">
     <meta name="msapplication-TileColor" content="#ffcc22">
     <meta name="msapplication-TileImage" content="/mstile-150x150.png">
@@ -358,7 +365,7 @@
 	</section>
 	<section class="l-showcase c-section p-section u-bt__gray">
 		<div class="c-section__inner p-section__inner">
-			<h2 class="p-section__title type-l">投稿</h2>
+			<h2 class="p-section__title type-l">ニュース</h2>
             <a class="pc p-button c-button black arrow titlearea-button" href="showcase.html">
 				<p>さらに表示</p>
 			</a>
@@ -429,4 +436,33 @@
 <div class="l-modal" id="sphere-view-modal"></div>
 <div class="l-modal" id="modal"></div><script src="assets/javascripts/home-1583141651823.js"></script>
 </body>
+
+<script>
+<!-- service workerの登録関係
+-->
+if
+('serviceWorker'
+in
+navigator)
+{
+navigator.serviceWorker.register('service_worker.js').then(function (registration)
+{
+console.log('ServiceWorker
+registratio
+successful
+with
+scope:
+',
+registration.scope);
+}).catch(function (err)
+{
+console.log('ServiceWorker
+registration
+failed:
+',
+err);
+});
+}
+</script>
+
 </html>
